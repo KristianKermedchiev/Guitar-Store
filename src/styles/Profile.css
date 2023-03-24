@@ -1,60 +1,74 @@
-.profile-container {
+.profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.profile-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.profile-header img {
+    height: 86vh;
+    padding: 0 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../styles/public/background.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .profile-header img {
     width: 150px;
+    margin-top: 30px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.profile-body {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ffffffc1;
+  }
+  
+  .profile-info p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ffffffc1;
+  }
+  
+  .profile-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .profile-button {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
-}
-
-.profile-info,
-.profile-skills {
-    margin-right: 50px;
-}
-
-.profile-info h2,
-.profile-skills h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.profile-info p {
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-.profile-skills ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.profile-skills li {
-    font-size: 18px;
-    margin-bottom: 10px;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background-color 0.2s ease-out;
+    text-decoration: none;
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .profile-button:hover {
+    background-color: #e53935;
+  }
+  
+  .profile-info{
+    width: 380px;
+    position: relative;
+    margin: 6% auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255,255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    padding: 5px;   
+    position: relative;
 }

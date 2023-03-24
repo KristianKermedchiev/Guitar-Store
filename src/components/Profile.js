@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
 import app from '../Utils/firebase';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 import '../styles/Profile.css';
 
 function Profile() {
 
-  const [username, setUsername] = useState('');
-  const auth = getAuth(app);
-  const navigate = useNavigate();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUsername(user.email);
-    } else {
-      navigate('/login');
-    }
-  });
-  return (
-    <div className="profile-container">
-      <div className="profile-header">
-        <h1>Welcome John Doe!</h1>
-        <img src="https://via.placeholder.com/150" alt="profile picture" />
-      </div>
-      <div className="profile-body">
-        <div className="profile-info">
-          <h2>About</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id orci eu enim malesuada lobortis. Sed vel velit purus.</p>
+    const [username, setUsername] = useState('');
+    const auth = getAuth(app);
+    const navigate = useNavigate();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setUsername(user.email);
+        } else {
+            navigate('/login');
+        }
+    });
+    return (
+        <div className="profile">
+            <div className="profile-header">
+                <img src="https://via.placeholder.com/150" alt="profile picture" />
+            </div>
+            <h1 className="profile-h1">Welcome to your profile page {username}</h1>
+            <div className="profile-info">
+                <p>Email: AAAAA@ABV.BG</p>
+                <p>Telephone: 0888888888</p>
+                <p>Likes: 5</p>
+                <p>Posts: 2</p>
+            </div>
+            <div className="profile-button-container">
+                <Link to="/catalog" className="profile-button">Update your info</Link>
+                <Link to="/catalog" className="profile-button">Liked Guitars</Link>
+                <Link to="/catalog" className="profile-button">Your Posts</Link>
+            </div>
         </div>
-        <div className="profile-skills">
-          <h2>Skills</h2>
-          <ul>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
+    );
+
 
 }
 export default Profile;

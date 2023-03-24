@@ -7,7 +7,7 @@ function Home() {
         <div className="home">
             <h1>Welcome to Guitar Store</h1>
                 <p>A place for all your guitar needs.</p>
-                <Link to="/catalog" className="btn btn-primary">Browse our catalog.</Link>
+                <Link to="/catalog" className="btn btn-primary">Browse our catalog</Link>
         </div>
     );
 };
