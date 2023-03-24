@@ -7,6 +7,9 @@ import ContactUs from './ContactUs';
 import Profile from './Profile';
 import Details from './Details';
 import Edit from './Edit';
+import UpdateInfo from './UpdateInfo';
+import YourFavorites from './YourFavorites';
+import YourPosts from './YourPosts';
 
 
 function PrivateRouter() {
@@ -20,10 +23,13 @@ function PrivateRouter() {
 					<Route path="/login" element={<Home />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/create" element={<Create />} />
-					<Route path="/aboutUs" element={<AboutUs />} />
-					<Route path="/contactUs" element={<ContactUs />} />
+					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/contact-us" element={<ContactUs />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
+					<Route path="/profile/change-info" element={<UpdateInfo />} />
+					<Route path="/profile/your-favorites" element={<YourFavorites />} />
+					<Route path="/profile/your-posts" element={<YourPosts />} />
 				</Routes>
 		
 	);

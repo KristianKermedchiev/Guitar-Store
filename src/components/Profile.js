@@ -60,9 +60,9 @@ function Profile() {
         <p>Posts: {posts.length}</p>
       </div>
       <div className="profile-button-container">
-        <Link to="/catalog" className="profile-button">Update your info</Link>
-        <Link to="/catalog" className="profile-button">Liked Guitars</Link>
-        <Link to="/catalog" className="profile-button">Your Posts</Link>
+        <Link to="/profile/updateInfo" className="profile-button">Update your info</Link>
+        <Link to="/profile/yourFavorites" className="profile-button">Favorite Guitars</Link>
+        <Link to="/profile/yourPosts" className="profile-button">Your Posts</Link>
       </div>
     </div>
   );
