@@ -1,0 +1,70 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+p {
+  margin: 27px;
+}
+
+.model{
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.guitar-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.guitar-image img {
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.guitar-info {
+  width: 50%;
+  margin-left: 1rem;
+}
+
+
+.guitar-info p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.guitar-description {
+  margin-top: 2rem;
+  
+}
+
+.guitar-description-p{
+  margin-left: 130px;
+}
+
+.guitar-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.guitar-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 37px;
+}
+
+.guitar-buttons button:hover {
+  background-color: #333;
+}
