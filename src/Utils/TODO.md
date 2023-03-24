@@ -1,2 +1,3 @@
-3. profile
-6. documentation
+1. profile
+2. documentation
+3. Fix Delete

@@ -72,41 +72,41 @@ function Details() {
         return unsubscribe;
     }, []);
 
-    // Handle Delete
-
+  // Handle Delete
     const handleDelete = async () => {
-        const db = getFirestore(app);
-        const guitarRef = doc(collection(db, 'Guitars'), id);
-        try {
-            await deleteDoc(guitarRef);
-            console.log('Document successfully deleted!');
-            navigate('/catalog');
-        } catch (error) {
-            console.error('Error removing document: ', error);
-        }
-        if (owner) {
-            await deleteGuitar(id, owner.owner.id, db);
-        }
-    };
-
-
-    // Delete Guitar record from user's collection
-
-
-    async function deleteGuitar(guitarId, ownerId, db) {
-        const ownerRef = doc(collection(db, 'Users'), ownerId);
-
-        try {
-            await updateDoc(ownerRef, {
-                posts: arrayRemove(guitarId),
-            });
-            console.log('Guitar removed from owner successfully!');
-
-        } catch (error) {
-            console.error('Error removing guitar from owner: ', error);
-        }
+    const db = getFirestore(app);
+    const guitarRef = doc(collection(db, 'Guitars'), id);
+  
+    try {
+      await deleteDoc(guitarRef);
+      console.log(id);
+      console.log(owner.owner);
+      console.log(guitarRef);
+      console.log(owner.owner);
+      console.log(db);
+      console.log('Document successfully deleted!');
+      
+      navigate('/catalog');
+    } catch (error) {
+      console.error('Error removing document: ', error);
+    }  
+      await deleteGuitar(id, owner.id, db);
+    
+  };
+  
+  // Delete guitar from owner's posts array
+  async function deleteGuitar(guitarId, ownerId, db) {
+    const ownerRef = doc(collection(db, 'Users'), ownerId);
+  
+    try {
+      await updateDoc(ownerRef, {
+        posts: arrayRemove(guitarId),
+      });
+      console.log('Guitar removed from owner successfully!');
+    } catch (error) {
+      console.error('Error removing guitar from owner: ', error);
     }
-
+  }
     // Like Handler
 
     async function likeHandler() {
@@ -187,9 +187,9 @@ function Details() {
                     <p>Price: {guitar.price} $</p>
                     {showSeller && (
                         <>
-                    <p>Seller's email: {sellerInfo.email}</p>
-                    <p>Seller's telephone: {sellerInfo.telephone}</p>
-                    </>
+                            <p>Seller's email: {sellerInfo.email}</p>
+                            <p>Seller's telephone: {sellerInfo.telephone}</p>
+                        </>
                     )}
                 </div>
             </div>
@@ -217,7 +217,7 @@ function Details() {
                                     {showSeller ? 'Hide Seller Info' : 'Show Seller Info'}
                                 </button>
 
-                                
+
 
                             </div>
                             : <div className="guitar-buttons">
