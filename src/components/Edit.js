@@ -109,9 +109,7 @@ function Edit() {
     }
 };
 
-    if (!guitar) {
-        return <div>Loading...</div>;
-    }
+   
 
     return (
         <div className="Edit">
