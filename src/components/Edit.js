@@ -30,6 +30,7 @@ function Edit() {
                 if (doc.exists()) {
                     setGuitar(doc.data());
                     setFormData(doc.data());
+                    console.log(guitar);
                 } else {
                     console.log('No such document!');
                 }
