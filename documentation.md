@@ -26,6 +26,8 @@ III. Overview:
 
 11. The Edit page is almost the same as the create page difference being the Update and Cancel buttons;
 
+12. Error Page is set to be shown when the users redirect to an unavailable page and not a page that requires authorization, those attempts will lead to the Login page.
+
 IV. Problems and Future. 
 
-12. The current problems of the website is that it is strictly tailered to selling guitars and the forms are not suited for other equipment which may be implemented in the future. The username is strictly cosmetic and does not serve any purpose currently and may be a part of forum or comment section in the future. The website does not use the browser history and therefore the back buttons will redirect the client to the 1st page regardless if they were previously on the 3rd, 4th, etc. 
+13. The current problems of the website is that it is strictly tailered to selling guitars and the forms are not suited for other equipment which may be implemented in the future. The username is strictly cosmetic and does not serve any purpose currently and may be a part of forum or comment section in the future. The website does not use the browser history and therefore the back buttons will redirect the client to the 1st page regardless if they were previously on the 3rd, 4th, etc. 
