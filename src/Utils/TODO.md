@@ -1,3 +1,3 @@
 1. documentation
-5. 404 page
-6. Implement error handling on all pages;
+2. Implement error handling on all pages;
+3. Routing?

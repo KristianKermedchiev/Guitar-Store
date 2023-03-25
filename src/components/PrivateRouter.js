@@ -10,6 +10,7 @@ import Edit from './Edit';
 import UpdateInfo from './UpdateInfo';
 import YourFavorites from './YourFavorites';
 import YourPosts from './YourPosts';
+import ErrorPage from './ErrorPage';
 
 
 function PrivateRouter() {
@@ -30,6 +31,8 @@ function PrivateRouter() {
 					<Route path="/profile/updateInfo" element={<UpdateInfo />} />
 					<Route path="/profile/yourFavorites" element={<YourFavorites />} />
 					<Route path="/profile/yourPosts" element={<YourPosts />} />
+					<Route path="*" element={<ErrorPage />} />
+
 				</Routes>
 		
 	);

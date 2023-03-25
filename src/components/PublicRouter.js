@@ -6,6 +6,7 @@ import Register from './Register';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import Details from './Details';
+import ErrorPage from './ErrorPage';
 
 
 function PublicRouter() {
@@ -26,6 +27,7 @@ function PublicRouter() {
 					<Route path="/profile/updateInfo" element={<Login />} />
 					<Route path="/profile/yourFavorites" element={<Login />} />
 					<Route path="/profile/yourPosts" element={<Login />} />
+					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 		
 	);
