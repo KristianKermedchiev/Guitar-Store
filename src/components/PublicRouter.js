@@ -20,7 +20,7 @@ function PublicRouter() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/profile" element={<Login />} />
 					<Route path="/create" element={<Login />} />
-					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/aboutUs" element={<AboutUs />} />
 					<Route path="/contactUs" element={<ContactUs />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Login />} />

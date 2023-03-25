@@ -24,7 +24,7 @@ function PrivateRouter() {
 					<Route path="/login" element={<Home />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/create" element={<Create />} />
-					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/aboutUs" element={<AboutUs />} />
 					<Route path="/contactUs" element={<ContactUs />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
