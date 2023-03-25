@@ -1,9 +1,11 @@
                                                             Guitar Store
 
 I Purpose: 
+
 1. The purpose of this website is to provide an easy way for hobby guitarists to sell their guitars. Each profile has mandatory information and optional one with the mandatory being the e-mail - this is the basic way for people to communicate with each other and the optional one being the telephone number. The website consists of a Catalog where authenticated users can view the contact details of the seller as well as add the current guitar to favorites. Authenticated users can Create posts, access their profile and manage their profile. Authenticated users who have created a post can edit and delete said post.
 
 II. Technical information: 
+
 2. The back-end is done using Firebase to maintain collections, access and modify them. The front-end is done with React. Additional library used is 'styled-components' to ease on the css.
 
 III. Overview:
