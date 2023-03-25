@@ -26,12 +26,12 @@ function PrivateRouter() {
 					<Route path="/create" element={<Create />} />
 					<Route path="/aboutUs" element={<AboutUs />} />
 					<Route path="/contactUs" element={<ContactUs />} />
+					<Route path="*" element={<ErrorPage />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
 					<Route path="/profile/updateInfo" element={<UpdateInfo />} />
 					<Route path="/profile/yourFavorites" element={<YourFavorites />} />
 					<Route path="/profile/yourPosts" element={<YourPosts />} />
-					<Route path="*" element={<ErrorPage />} />
 
 				</Routes>
 		

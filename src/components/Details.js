@@ -28,11 +28,16 @@ function Details() {
                 if (doc.exists()) {
                     setGuitar(doc.data());
                 } else {
+                    navigate('/*');
+
                     console.log('No such document!');
+
                 }
             })
             .catch((error) => {
                 console.log('Error getting document:', error);
+                navigate('/*');
+
             })
             .finally(() => {
                 setLoading(false);
@@ -50,11 +55,14 @@ function Details() {
                     if (doc.exists()) {
                         setOwner(doc.data());
                     } else {
+                        navigate('/*');
                         console.log('No such document!');
                     }
                 })
                 .catch((error) => {
                     console.log('Error getting document:', error);
+                    navigate('/*');
+
                 })
                 .finally(() => {
                     setLoading(false);
@@ -85,6 +93,8 @@ function Details() {
       navigate('/catalog');
     } catch (error) {
       console.error('Error removing document: ', error);
+      navigate('/*');
+
     }  
       await deleteGuitar(id, owner.id, db);
     
@@ -101,6 +111,8 @@ function Details() {
       console.log('Guitar removed from owner successfully!');
     } catch (error) {
       console.error('Error removing guitar from owner: ', error);
+      navigate('/*');
+
     }
   }
     // Like Handler
@@ -127,6 +139,8 @@ function Details() {
                 }
             } else {
                 console.log('No such document!');
+                navigate('/*');
+
             }
         } catch (error) {
             console.error('Error liking guitar: ', error);
@@ -146,6 +160,8 @@ function Details() {
                     setShowSeller(true);
                 } else {
                     console.log('No such document!');
+                    navigate('/*');
+
                 }
             })
             .catch((error) => {
