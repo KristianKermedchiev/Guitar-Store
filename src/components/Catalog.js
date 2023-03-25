@@ -67,7 +67,7 @@ function Catalog() {
         <p>Current Page: {currentPage}</p>
         <button
           onClick={handleNextClick}
-          disabled={currentPage === Math.ceil(guitars.length / 4)}
+          disabled={currentPage === Math.ceil(guitars.length / 4) || Math.ceil(guitars.length / 4) === 0 }
         >
           Next
         </button>
