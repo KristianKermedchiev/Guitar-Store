@@ -76,3 +76,16 @@
   margin: 0 10px;
   font-size: 18px;
 }
+
+.nothing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.nothing h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}

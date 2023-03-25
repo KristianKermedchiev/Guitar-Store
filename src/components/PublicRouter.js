@@ -20,12 +20,12 @@ function PublicRouter() {
 					<Route path="/profile" element={<Login />} />
 					<Route path="/create" element={<Login />} />
 					<Route path="/about-us" element={<AboutUs />} />
-					<Route path="/contact-us" element={<ContactUs />} />
+					<Route path="/contactUs" element={<ContactUs />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Login />} />
-					<Route path="/profile/change-info" element={<Login />} />
-					<Route path="/profile/your-favorites" element={<Login />} />
-					<Route path="/profile/your-posts" element={<Login />} />
+					<Route path="/profile/updateInfo" element={<Login />} />
+					<Route path="/profile/yourFavorites" element={<Login />} />
+					<Route path="/profile/yourPosts" element={<Login />} />
 				</Routes>
 		
 	);

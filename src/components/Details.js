@@ -79,11 +79,7 @@ function Details() {
   
     try {
       await deleteDoc(guitarRef);
-      console.log(id);
-      console.log(owner.owner);
-      console.log(guitarRef);
-      console.log(owner.owner);
-      console.log(db);
+      
       console.log('Document successfully deleted!');
       
       navigate('/catalog');

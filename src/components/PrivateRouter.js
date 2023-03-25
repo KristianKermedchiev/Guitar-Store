@@ -24,12 +24,12 @@ function PrivateRouter() {
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/about-us" element={<AboutUs />} />
-					<Route path="/contact-us" element={<ContactUs />} />
+					<Route path="/contactUs" element={<ContactUs />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
-					<Route path="/profile/change-info" element={<UpdateInfo />} />
-					<Route path="/profile/your-favorites" element={<YourFavorites />} />
-					<Route path="/profile/your-posts" element={<YourPosts />} />
+					<Route path="/profile/updateInfo" element={<UpdateInfo />} />
+					<Route path="/profile/yourFavorites" element={<YourFavorites />} />
+					<Route path="/profile/yourPosts" element={<YourPosts />} />
 				</Routes>
 		
 	);
