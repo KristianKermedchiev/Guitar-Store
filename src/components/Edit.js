@@ -30,7 +30,8 @@ function Edit() {
                 if (doc.exists()) {
                     setGuitar(doc.data());
                     setFormData(doc.data());
-                    console.log(guitar);
+                    console.log(guitar)
+                    console.log(formData)
                 } else {
                     console.log('No such document!');
                 }
@@ -70,8 +71,8 @@ function Edit() {
         errors.fretCount = 'Fret count is required and must be a number';
     }
 
-    if (!formData.price || isNaN(formData.price|| Number(formData.price) < 1 || Number(formData.price) > 100000)) {
-        errors.price = 'Price is required and must be a number';
+    if (!formData.price || isNaN(Number(formData.price)) || Number(formData.price) < 1 || Number(formData.price) > 100000) {
+        errors.price = 'Price is required and must be a number between 1 and 100000';
     }
 
     const result = validateImgUrl(formData.imgUrl);
@@ -81,7 +82,7 @@ function Edit() {
         
     }
 
-    if (!formData.description || formData.description.length < 10 || formData.description.length > 50) {
+    if (!formData.description || formData.description.length < 10 || formData.description.length > 10000) {
         errors.description = 'Description is required';
     }
 
