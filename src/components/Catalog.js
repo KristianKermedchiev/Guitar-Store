@@ -48,18 +48,18 @@ function Catalog() {
   return (
     <div>
       {loading && <Spinner />}
-      <div className="catalog-container">
-        {visibleGuitars.map((guitar) => (
-          
-          <div className="catalog-item" key={guitar.id}>
-             <Link to={`/catalog/${guitar.id}`} key={guitar.id}>
-            <img src={guitar.imgUrl} alt={guitar.type}></img>
-            <h3>{guitar.model}</h3>
-            </Link>
-          </div>
-          
-        ))}
-      </div>
+          {guitars.length === 0 ? <div className="nothing"> <h1>Nothing to display</h1></div> : (
+            <div className="catalog-container">
+              {visibleGuitars.map((guitar) => (
+                <div className="catalog-item" key={guitar.id}>
+                  <Link to={`/catalog/${guitar.id}`} key={guitar.id}>
+                    <img src={guitar.imgUrl} alt={guitar.type}></img>
+                    <h3>{guitar.model}</h3>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
       <div className="pagination">
         <button onClick={handlePreviousClick} disabled={currentPage === 1}>
           Previous
