@@ -8,7 +8,7 @@ import { validateImgUrl } from '../Utils/ProductValidator';
 function Edit() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [guitar, setGuitar] = useState(null);
+    // const [guitar, setGuitar] = useState(null);
     const [formData, setFormData] = useState({
         type: '',
         model: '',
@@ -28,10 +28,8 @@ function Edit() {
         getDoc(guitarRef)
             .then((doc) => {
                 if (doc.exists()) {
-                    setGuitar(doc.data());
+                    // setGuitar(doc.data());
                     setFormData(doc.data());
-                    console.log(guitar)
-                    console.log(formData)
                 } else {
                     console.log('No such document!');
                 }

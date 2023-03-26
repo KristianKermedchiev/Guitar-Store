@@ -83,4 +83,36 @@
     color: #fff;
     text-align: center;
   }
+
+  .imgUrl-error {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+
+  }
+
+  .username-error {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
   
+  }
+
+  .telephone-error {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+  
+  }
