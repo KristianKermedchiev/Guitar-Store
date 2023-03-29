@@ -1,5 +1,5 @@
 import app from '../Utils/firebase';
-import { collection, doc, deleteDoc, getDoc, getFirestore, updateDoc, arrayRemove, arrayUnion, setDoc } from 'firebase/firestore';
+import { collection, doc, deleteDoc, getDoc, getFirestore, updateDoc, arrayRemove, arrayUnion } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Spinner from './Spinner';
@@ -81,7 +81,7 @@ function Details() {
     }, []);
 
     // GET Current User
-    
+
     useEffect(() => {
         if(guitar && currentUser) {
         const db = getFirestore(app);
