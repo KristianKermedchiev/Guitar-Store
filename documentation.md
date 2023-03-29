@@ -6,7 +6,7 @@ I Purpose:
 
 II. Technical information: 
 
-2. The back-end is done using Firebase to maintain collections, access and modify them. The front-end is done with React. Additional library used is 'styled-components' to ease on the css.
+2. The back-end is done using Firebase to maintain collections, access and modify them. The front-end is done with React. Additional library used is 'styled-components' to ease on the css. The website is deployed and can be accessed via the following link: https://guitar-store-b5a07.web.app ;
 
 III. Overview:
 
