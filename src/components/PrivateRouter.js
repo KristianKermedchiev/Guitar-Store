@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home';
 import Catalog from './Catalog';
 import Create from './Create';
@@ -26,13 +26,13 @@ function PrivateRouter() {
 					<Route path="/create" element={<Create />} />
 					<Route path="/aboutUs" element={<AboutUs />} />
 					<Route path="/contactUs" element={<ContactUs />} />
-					<Route path="*" element={<ErrorPage />} />
+					<Route path="/pageNotFound" element={<ErrorPage />} />
+					<Route path="*" element={<Navigate to="/" replace />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
 					<Route path="/profile/updateInfo" element={<UpdateInfo />} />
 					<Route path="/profile/yourFavorites" element={<YourFavorites />} />
 					<Route path="/profile/yourPosts" element={<YourPosts />} />
-
 				</Routes>
 		
 	);

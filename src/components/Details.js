@@ -1,5 +1,5 @@
 import app from '../Utils/firebase';
-import { collection, doc, deleteDoc, getDoc, getFirestore, updateDoc, arrayRemove, arrayUnion } from 'firebase/firestore';
+import { collection, doc, deleteDoc, getDoc, getFirestore, updateDoc, arrayRemove, arrayUnion, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Spinner from './Spinner';
@@ -17,6 +17,7 @@ function Details() {
     const [currentUser, setCurrentUser] = useState(null);
     const [showSeller, setShowSeller] = useState(false);
     const [sellerInfo, setSellerInfo] = useState(null);
+    const [isLiked, setIsLiked] = useState(false);
 
     //GET Guitar
     useEffect(() => {
@@ -29,7 +30,6 @@ function Details() {
                     setGuitar(doc.data());
                 } else {
                     navigate('/*');
-
                     console.log('No such document!');
 
                 }
@@ -55,13 +55,13 @@ function Details() {
                     if (doc.exists()) {
                         setOwner(doc.data());
                     } else {
-                        navigate('/*');
+                        navigate('/pageNotFound');
                         console.log('No such document!');
                     }
                 })
                 .catch((error) => {
                     console.log('Error getting document:', error);
-                    navigate('/*');
+                    navigate('/pageNotFound');
 
                 })
                 .finally(() => {
@@ -70,7 +70,7 @@ function Details() {
         }
     }, [guitar]);
 
-    //GET Current User
+    //GET Auth User
 
     useEffect(() => {
         const auth = getAuth();
@@ -79,6 +79,32 @@ function Details() {
         });
         return unsubscribe;
     }, []);
+
+    // GET Current User
+    
+    useEffect(() => {
+        if(guitar && currentUser) {
+        const db = getFirestore(app);
+        const currentUserRef = doc(collection(db, 'Users'), currentUser.uid);
+        
+        getDoc(currentUserRef)
+                .then((doc) => {
+                    if (doc.exists()) {
+                        let likes = doc.data().likes;
+                        if(likes){
+                            const guitarIsLike = likes.includes(guitar.id);
+                            setIsLiked(guitarIsLike);
+                        };
+                        
+                    } 
+                })
+                .catch((error) => {
+                    console.log('Error getting document:', error);
+                    navigate('/pageNotFound');
+
+                })
+            };
+    }, [guitar, currentUser])
 
   // Handle Delete
     const handleDelete = async () => {
@@ -124,24 +150,26 @@ function Details() {
 
         try {
             const guitarDoc = await getDoc(guitarRef);
+            const userDoc = await getDoc(userRef);
+            const guitarData = guitarDoc.data();
+            const userData = userDoc.data();
+            console.log(guitarData)
+            console.log(userData)
 
-            if (guitarDoc.exists()) {
-                const liked = guitarDoc.data().liked;
-                const newLiked = !liked;
-
-                await updateDoc(guitarRef, { liked: newLiked });
-                setGuitar({ ...guitar, liked: newLiked });
-
-                if (newLiked) {
-                    await updateDoc(userRef, { likes: arrayUnion(id) });
+           if(guitarData && userData){
+                if(userData.likes.includes(guitarDoc.id)){
+                    await updateDoc(userRef, {
+                        likes: arrayRemove(guitarDoc.id)
+                        
+                    })
+                    setIsLiked(false);
                 } else {
-                    await updateDoc(userRef, { likes: arrayRemove(id) });
+                    await updateDoc(userRef, {
+                        likes: arrayUnion(guitarDoc.id)
+                    })
+                    setIsLiked(true);
                 }
-            } else {
-                console.log('No such document!');
-                navigate('/*');
-
-            }
+           }
         } catch (error) {
             console.error('Error liking guitar: ', error);
         }
@@ -217,7 +245,7 @@ function Details() {
                                     <button>Back</button>
                                 </Link>
 
-                                {guitar.liked
+                                {isLiked
                                     ? <button onClick={likeHandler}>
                                         Remove from favorites
                                     </button>
@@ -228,8 +256,6 @@ function Details() {
                                 <button onClick={toggleSellerInfo}>
                                     {showSeller ? 'Hide Seller Info' : 'Show Seller Info'}
                                 </button>
-
-
 
                             </div>
                             : <div className="guitar-buttons">

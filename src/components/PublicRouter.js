@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import Catalog from './Catalog';
@@ -27,7 +27,9 @@ function PublicRouter() {
 					<Route path="/profile/updateInfo" element={<Login />} />
 					<Route path="/profile/yourFavorites" element={<Login />} />
 					<Route path="/profile/yourPosts" element={<Login />} />
-					<Route path="*" element={<ErrorPage />} />
+					<Route path="/pageNotFound" element={<ErrorPage />} />
+					<Route path="*" element={<Navigate to="/" replace />} />
+
 				</Routes>
 		
 	);
