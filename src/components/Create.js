@@ -34,6 +34,8 @@ function Create() {
     const [isFormValid, setIsFormValid] = useState(false);
 
 
+    //GET AUTH USER;
+
     useEffect(() => {
         const auth = getAuth(app);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -102,7 +104,6 @@ function Create() {
               const updatedPosts = [...userData.posts, guitarRef.id];
               await updateDoc(userRef, { posts: updatedPosts });
             }
-          
             navigate('/catalog');
           };
 

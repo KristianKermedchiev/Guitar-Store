@@ -1,1 +1,0 @@
-3. validating update your info;

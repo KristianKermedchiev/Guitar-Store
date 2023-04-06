@@ -12,6 +12,8 @@ function Catalog() {
   const [loading, setLoading] = useState(true);
 
   const db = getFirestore(app);
+  
+  // Fetch guitars from Firebase
 
   useEffect(() => {
     const fetchGuitars = async () => {
