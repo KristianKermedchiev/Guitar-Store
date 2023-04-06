@@ -8,7 +8,6 @@ import { validateImgUrl } from '../Utils/ProductValidator';
 function Edit() {
     const { id } = useParams();
     const navigate = useNavigate();
-    // const [guitar, setGuitar] = useState(null);
     const [formData, setFormData] = useState({
         type: '',
         model: '',
@@ -28,14 +27,18 @@ function Edit() {
         getDoc(guitarRef)
             .then((doc) => {
                 if (doc.exists()) {
-                    // setGuitar(doc.data());
                     setFormData(doc.data());
                 } else {
                     console.log('No such document!');
+                    navigate('/pageNotFound');
+
                 }
             })
             .catch((error) => {
                 console.log('Error getting document:', error);
+                navigate('/pageNotFound');
+
+
             });
     }, [id]);
 
@@ -105,6 +108,8 @@ function Edit() {
             navigate(`/catalog/${id}`);
         } catch (error) {
             console.error('Error updating document: ', error);
+                    navigate('/pageNotFound');
+
         }
     }
 };

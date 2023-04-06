@@ -27,7 +27,6 @@ function PrivateRouter() {
 					<Route path="/aboutUs" element={<AboutUs />} />
 					<Route path="/contactUs" element={<ContactUs />} />
 					<Route path="/pageNotFound" element={<ErrorPage />} />
-					<Route path="*" element={<Navigate to="/" replace />} />
 					<Route path="/catalog/:id" element={<Details />} />
 					<Route path="/catalog/:id/edit" element={<Edit />} />
 					<Route path="/profile/updateInfo" element={<UpdateInfo />} />

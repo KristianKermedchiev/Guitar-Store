@@ -29,14 +29,14 @@ function Details() {
                 if (doc.exists()) {
                     setGuitar(doc.data());
                 } else {
-                    navigate('/*');
+                    navigate('/pageNotFound');
                     console.log('No such document!');
 
                 }
             })
             .catch((error) => {
                 console.log('Error getting document:', error);
-                navigate('/*');
+                navigate('/pageNotFound');
 
             })
             .finally(() => {
@@ -119,7 +119,7 @@ function Details() {
       navigate('/catalog');
     } catch (error) {
       console.error('Error removing document: ', error);
-      navigate('/*');
+      navigate('/pageNotFound');
 
     }  
       await deleteGuitar(id, owner.id, db);
@@ -137,7 +137,7 @@ function Details() {
       console.log('Guitar removed from owner successfully!');
     } catch (error) {
       console.error('Error removing guitar from owner: ', error);
-      navigate('/*');
+      navigate('/pageNotFound');
 
     }
   }
@@ -171,7 +171,8 @@ function Details() {
                 }
            }
         } catch (error) {
-            console.error('Error liking guitar: ', error);
+            navigate('/pageNotFound');
+            
         }
     };
 
@@ -188,12 +189,14 @@ function Details() {
                     setShowSeller(true);
                 } else {
                     console.log('No such document!');
-                    navigate('/*');
+                    navigate('/pageNotFound');
 
                 }
             })
             .catch((error) => {
                 console.log('Error getting document:', error);
+                navigate('/pageNotFound');
+
             });
     };
 

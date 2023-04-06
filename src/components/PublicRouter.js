@@ -28,7 +28,6 @@ function PublicRouter() {
 					<Route path="/profile/yourFavorites" element={<Login />} />
 					<Route path="/profile/yourPosts" element={<Login />} />
 					<Route path="/pageNotFound" element={<ErrorPage />} />
-					<Route path="*" element={<Navigate to="/" replace />} />
 
 				</Routes>
 		

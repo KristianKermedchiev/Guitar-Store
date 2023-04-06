@@ -36,10 +36,14 @@ function Profile() {
             setPosts(data.posts);
           } else {
             console.log("No such document!");
+            navigate('/pageNotFound');
+
           }
         })
         .catch((error) => {
           console.log("Error getting document:", error);
+          navigate('/pageNotFound');
+
         });
     } else {
       navigate('/login');
