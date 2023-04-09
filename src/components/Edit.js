@@ -60,7 +60,7 @@ function Edit() {
         errors.type = 'Type is required';
     }
 
-    if (!formData.model || formData.type.length < 5) {
+    if (!formData.model || formData.model.length < 5) {
         errors.model = 'Model is required';
     }
 
