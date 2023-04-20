@@ -1,4 +1,4 @@
-                                                            Guitar Store
+                                                         Guitar Store
 
 I Purpose: 
 
